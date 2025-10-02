@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using BeastReload.Config;
+using BepInEx;
 using BepInEx.Configuration;
 using HarmonyLib;
 using Progress;
@@ -17,36 +18,12 @@ namespace BeastReload
         public static ConfigEntry<bool> AutoStartGame;
         public static ConfigEntry<bool> InfiniteAmmo;
 
+        ConfigManager configManager;
+
 
         private void Awake()
         {
-            SkipStartIntro = Config.Bind(
-                "Settings",
-                "Skip Start Game Cutscene",
-                true,
-                "Skip the initial intro animation"
-            );
-
-            SkipIntroCutscene = Config.Bind(
-                "Settings",
-                "Skip Intro Cutscene",
-                true,
-                "Skip the initial intro animation"
-            );
-
-            AutoStartGame = Config.Bind(
-                "Settings",
-                "Auto Start Game",
-                true,
-                "Automatically start game after skipping intro"
-            );
-
-            InfiniteAmmo = Config.Bind(
-                "Settings",
-                "Infinite Ammo",
-                true,
-                "Bullet Rain"
-            );
+            configManager = new ConfigManager(Config);
 
             var harmony = new Harmony("BeastReload");
             harmony.PatchAll();
