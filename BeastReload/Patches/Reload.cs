@@ -15,11 +15,6 @@ namespace BeastReload.Patches
         //TO-DO Not Making no ammo animation
         private static int ReloadAmount = ConfigManager.ReloadAmount.Value;
 
-        static readonly HashSet<Type> NotAllowedTypes = new HashSet<Type>
-        {
-            typeof(WeaponPickup),
-        };
-
         static void Prefix(PlayerArmManager __instance)
         {
             if (Input.GetKeyDown(ConfigManager.ReloadKey))
