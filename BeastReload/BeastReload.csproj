@@ -70,6 +70,7 @@
     <Compile Include="BeastManager.cs" />
     <Compile Include="Config\ConfigManager.cs" />
     <Compile Include="Patches\InfiniteAmmo_Patch.cs" />
+    <Compile Include="Patches\Reload.cs" />
     <Compile Include="Patches\SkipIntroCutscene_Patch.cs" />
     <Compile Include="Patches\SkipStartScreenIntro_Patch.cs" />
     <Compile Include="Patches\TigerMode.cs" />

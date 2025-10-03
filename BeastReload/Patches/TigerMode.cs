@@ -16,16 +16,17 @@ namespace BeastReload.Patches
 
         static bool Prefix(object __instance, ref bool __result)
         {
-            var instType = __instance.GetType();
+            if (BeastManager.configManager.TigerMode.Value)
+            {
+                var instType = __instance.GetType();
 
-            if (NotAllowedTypes.Contains(instType))
-            {
-                return false;
+                if (NotAllowedTypes.Contains(instType))
+                {
+                    return false;
+                }
             }
-            else
-            {
-                return true;
-            }
+
+            return true;
         }
     }
 

@@ -15,7 +15,7 @@ namespace BeastReload.Patches
         {
             if (BeastManager.configManager.SkipIntroCutscene.Value)
             {
-                __result = false; // Говорим что интро уже показывалось
+                __result = false;
             }
         }
     }
